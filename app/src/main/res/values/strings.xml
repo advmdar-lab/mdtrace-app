@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MDTrace</string>
+    <string name="notification_title">MDTrace — Family Safety GPS</string>
+    <string name="notification_text">Location tracking is active</string>
+</resources>

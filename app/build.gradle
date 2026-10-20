@@ -1,0 +1,35 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.mdtrace.tracker'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.mdtrace.tracker"
+        minSdk 23          // Android 6.0+
+        targetSdk 34
+        versionCode 4
+        versionName "4.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug   // Use debug key for easy install
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
+    implementation 'androidx.core:core:1.12.0'
+}
