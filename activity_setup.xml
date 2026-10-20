@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f6fa">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Header -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:background="#1a237e" android:padding="20dp"
+            android:layout_marginBottom="20dp">
+            <TextView android:text="MD" android:layout_width="48dp" android:layout_height="48dp"
+                android:gravity="center" android:textColor="#fff" android:textSize="18sp"
+                android:textStyle="bold" android:background="@drawable/circle_bg_small" android:layout_marginEnd="12dp"/>
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView android:text="MDTrace Setup" android:textColor="#fff"
+                    android:textSize="20sp" android:textStyle="bold"/>
+                <TextView android:text="Family Safety GPS" android:textColor="#9fa8da" android:textSize="13sp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Mode selection -->
+        <TextView android:text="क्या करना है?" android:textSize="14sp"
+            android:textColor="#555" android:textStyle="bold" android:layout_marginBottom="8dp"/>
+
+        <RadioGroup android:id="@+id/rg_mode"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginBottom="16dp">
+            <RadioButton android:id="@+id/rb_register" android:text="नया परिवार बनाएँ"
+                android:checked="true" android:layout_weight="1"
+                android:textSize="13sp" android:padding="12dp"/>
+            <RadioButton android:id="@+id/rb_join" android:text="परिवार से जुड़ें"
+                android:layout_weight="1" android:textSize="13sp" android:padding="12dp"/>
+        </RadioGroup>
+
+        <!-- Your Name -->
+        <TextView android:text="आपका नाम" android:textSize="13sp"
+            android:textColor="#333" android:textStyle="bold" android:layout_marginBottom="6dp"/>
+        <EditText android:id="@+id/et_name"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="पूरा नाम लिखें" android:inputType="textPersonName"
+            android:background="@drawable/input_bg" android:padding="14dp"
+            android:textSize="15sp" android:layout_marginBottom="14dp"/>
+
+        <!-- Phone -->
+        <TextView android:text="मोबाइल नंबर (10 अंक)" android:textSize="13sp"
+            android:textColor="#333" android:textStyle="bold" android:layout_marginBottom="6dp"/>
+        <EditText android:id="@+id/et_phone"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="10-digit number" android:inputType="phone"
+            android:maxLength="10" android:background="@drawable/input_bg"
+            android:padding="14dp" android:textSize="15sp" android:layout_marginBottom="14dp"/>
+
+        <!-- Family Name (for register) -->
+        <TextView android:text="परिवार का नाम" android:textSize="13sp"
+            android:textColor="#333" android:textStyle="bold" android:layout_marginBottom="6dp"
+            android:id="@+id/lbl_family"/>
+        <EditText android:id="@+id/et_family_name"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="e.g. Islam Family" android:inputType="textCapWords"
+            android:background="@drawable/input_bg" android:padding="14dp"
+            android:textSize="15sp" android:layout_marginBottom="14dp"/>
+
+        <!-- Invite Code (for join) -->
+        <EditText android:id="@+id/et_invite_code"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="6-letter invite code (e.g. AB1C2D)"
+            android:inputType="textCapCharacters" android:maxLength="6"
+            android:background="@drawable/input_bg" android:padding="14dp"
+            android:textSize="18sp" android:letterSpacing="0.3"
+            android:gravity="center" android:layout_marginBottom="14dp"
+            android:visibility="gone"/>
+
+        <!-- Action Button -->
+        <Button android:id="@+id/btn_action"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="✨ Create Family &amp; Start"
+            android:backgroundTint="#1a237e" android:textColor="#fff"
+            android:textSize="16sp" android:textStyle="bold"
+            android:padding="16dp" android:layout_marginTop="8dp"/>
+
+        <!-- Status -->
+        <TextView android:id="@+id/tv_status"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="" android:textSize="14sp" android:gravity="center"
+            android:layout_marginTop="16dp" android:lineSpacingExtra="4dp"/>
+
+        <!-- Info box -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="#e8f5e9" android:padding="14dp" android:layout_marginTop="20dp">
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="ℹ️ एक बार सेटअप होने के बाद:\n• GPS हमेशा background में चलेगा\n• Phone restart पर भी automatically शुरू होगा\n• परिवार का admin आपकी location देख सकेगा"
+                android:textSize="13sp" android:textColor="#2e7d32" android:lineSpacingExtra="4dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
